@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>يلا بينا | دليفري وتوصيل أفراد - سوهاج</title>
+<meta name="description" content="أسرع دليفري وتوصيل أفراد وطلبات وطرود في سوهاج">
+<link rel="icon" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#ea580c">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Tahoma,sans-serif;background:#0f172a;color:#fff}
+header{background:linear-gradient(180deg,#f97316,#ea580c);padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:30px}header p{margin:6px 0 0;opacity:.95}
+main{max-width:560px;margin:auto;padding:16px}
+.card{background:#1e293b;border-radius:16px;padding:16px;margin-bottom:14px}
+label{display:block;margin:12px 0 5px;font-weight:700}
+input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#fff;font-size:16px}
+.tabs{display:flex;gap:8px}.tabs button{flex:1;padding:12px;border-radius:12px;border:0;font-size:16px;font-weight:700;cursor:pointer;background:#334155;color:#fff}.tabs button.active{background:#ea580c}
+.vehicle{display:flex;gap:8px}.vehicle label{flex:1;text-align:center;background:#334155;padding:12px;border-radius:12px;cursor:pointer}.vehicle input{display:none}.vehicle input:checked+span{color:#fbbf24}
+button.cta{width:100%;padding:16px;border:0;border-radius:14px;background:#22c55e;color:#fff;font-size:19px;font-weight:800;cursor:pointer}
+.small{color:#cbd5e1;font-size:14px;line-height:1.7}
+a{color:#fdba74}
+</style>
+</head>
+<body>
+<header><h1>🛵 يلا بينا</h1><p>دليفري وتوصيل أفراد وطلبات وطرود — سوهاج</p><p class="small">المقر: بحري بنك فيصل الإسلامي، متفرع من ميدان الثقافة</p></header>
+<main>
+<div class="card"><div class="tabs"><button type="button" id="tabRide" class="active">🚗 مشوار</button><button type="button" id="tabDelivery">🍔 دليفري</button></div></div>
+<div class="card">
+<label>من أين؟ (نقطة الانطلاق)</label><input id="from" placeholder="مثال: ميدان الثقافة، سوهاج">
+<button type="button" id="geo" style="margin-top:8px;padding:10px;border-radius:10px;border:0;background:#0ea5e9;color:#fff;width:100%">📍 تحديد موقعي</button>
+<label>إلى أين؟ (وجهة الوصول)</label><input id="to" placeholder="مثال: جامعة سوهاج (القديمة)">
+<label>نوع الطلب</label><select id="kind"><option>مطعم / أكل</option><option>صيدلية / علاج</option><option>سوبر ماركت</option><option>طرد / أوراق</option><option>مشوار / توصيل أفراد</option></select>
+<label>تفاصيل الطلب</label><textarea id="details" rows="3" placeholder="اسم المحل، عنوان التوصيل، محتوى الطرد..."></textarea>
+<label>استلام من / تسليم إلى</label><input id="receiver" placeholder="اسم ورقم المستلم">
+<label>اسمك</label><input id="name" placeholder="اسمك">
+<label>رقم موبايلك</label><input id="phone" type="tel" placeholder="01xxxxxxxxx" dir="ltr">
+<label>وسيلة النقل</label><div class="vehicle"><label><input type="radio" name="v" value="موتوسيكل" checked><span>🛵 موتوسيكل - أسرع وأوفر</span></label><label><input type="radio" name="v" value="سيارة ملاكي"><span>🚗 ملاكي - مريحة ومكيفة</span></label></div>
+<button class="cta" id="send">✅ تأكيد وطلب الآن عبر واتساب</button>
+<p class="small">بالضغط على تأكيد سيتم تحويلك لواتساب لإرسال الطلب ومتابعة الكابتن. واتساب: 01038007886 | هاتف: 01275588383</p>
+</div>
+<div class="card small"><b>الحساب:</b> المسافة والوقت والتكلفة المتوقعة يتم تأكيدهم مع الكابتن على واتساب بعد إرسال الطلب.<br><a href="./privacy.html">سياسة الخصوصية</a></div>
+</main>
+<script>
+const p=new URLSearchParams(location.search);function setTab(t){document.getElementById('tabRide').classList.toggle('active',t!=='delivery');document.getElementById('tabDelivery').classList.toggle('active',t==='delivery');document.getElementById('kind').value=t==='delivery'?'مطعم / أكل':'مشوار / توصيل أفراد';}
+if(p.get('tab'))setTab(p.get('tab'));
+document.getElementById('tabRide').onclick=()=>setTab('ride');
+document.getElementById('tabDelivery').onclick=()=>setTab('delivery');
+document.getElementById('geo').onclick=()=>{if(!navigator.geolocation)return alert('المتصفح لا يدعم تحديد الموقع');navigator.geolocation.getCurrentPosition(pos=>{document.getElementById('from').value='موقعي الحالي: '+pos.coords.latitude.toFixed(5)+', '+pos.coords.longitude.toFixed(5);},()=>alert('اسمح بتحديد الموقع من المتصفح'));};
+document.getElementById('send').onclick=()=>{const g=id=>document.getElementById(id).value.trim();const phone=g('phone');if(!g('from')||!g('to')||!g('name')||!phone)return alert('من فضلك كمّل: من أين، إلى أين، الاسم، ورقم الموبايل');if(!/^01[0-9]{9}$/.test(phone))return alert('رقم الموبايل لازم يبدأ بـ 01 ويكون 11 رقم');const v=document.querySelector('input[name=v]:checked').value;const msg='طلب جديد - يلا بينا%0Aمن: '+encodeURIComponent(g('from'))+'%0Aإلى: '+encodeURIComponent(g('to'))+'%0Aالنوع: '+encodeURIComponent(g('kind'))+'%0Aالتفاصيل: '+encodeURIComponent(g('details'))+'%0Aالمستلم: '+encodeURIComponent(g('receiver'))+'%0Aالاسم: '+encodeURIComponent(g('name'))+'%0Aالموبايل: '+phone+'%0Aالوسيلة: '+encodeURIComponent(v);window.open('https://wa.me/201038007886?text='+msg,'_blank');};
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js');}
+</script>
+</body>
+</html>
