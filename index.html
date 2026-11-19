@@ -1,56 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>يلا بينا | دليفري وتوصيل أفراد - سوهاج</title>
-<meta name="description" content="أسرع دليفري وتوصيل أفراد وطلبات وطرود في سوهاج">
-<link rel="icon" href="./icon-192.png">
-<link rel="apple-touch-icon" href="./apple-touch-icon.png">
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#ea580c">
-<style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Tahoma,sans-serif;background:#0f172a;color:#fff}
-header{background:linear-gradient(180deg,#f97316,#ea580c);padding:22px 16px;text-align:center}
-header h1{margin:0;font-size:30px}header p{margin:6px 0 0;opacity:.95}
-main{max-width:560px;margin:auto;padding:16px}
-.card{background:#1e293b;border-radius:16px;padding:16px;margin-bottom:14px}
-label{display:block;margin:12px 0 5px;font-weight:700}
-input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#fff;font-size:16px}
-.tabs{display:flex;gap:8px}.tabs button{flex:1;padding:12px;border-radius:12px;border:0;font-size:16px;font-weight:700;cursor:pointer;background:#334155;color:#fff}.tabs button.active{background:#ea580c}
-.vehicle{display:flex;gap:8px}.vehicle label{flex:1;text-align:center;background:#334155;padding:12px;border-radius:12px;cursor:pointer}.vehicle input{display:none}.vehicle input:checked+span{color:#fbbf24}
-button.cta{width:100%;padding:16px;border:0;border-radius:14px;background:#22c55e;color:#fff;font-size:19px;font-weight:800;cursor:pointer}
-.small{color:#cbd5e1;font-size:14px;line-height:1.7}
-a{color:#fdba74}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07172d">
+  <meta name="description" content="يلا بينا YALBENA — منصة خدمات ومشاوير وتوصيل تبدأ من مدينة سوهاج بالكامل.">
+  <title>يلا بينا | YALBENA — خدماتك ومشاويرك في مكان واحد</title>
+  <style>
+    :root{color-scheme:dark;--navy:#07172d;--navy2:#102b4b;--gold:#d6b15e;--cream:#f7f3e8;--muted:#c3cfdd;--line:#ffffff20;--panel:#ffffff0b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#17385b 0,transparent 38%),linear-gradient(145deg,var(--navy),var(--navy2));color:var(--cream);font-family:Tahoma,Arial,sans-serif;line-height:1.75}
+    a{color:inherit}.wrap{width:min(1100px,calc(100% - 40px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}.logo{font-weight:800;font-size:25px;color:var(--gold);white-space:nowrap}.logo small{font-size:13px;color:var(--cream);font-weight:500}.nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.nav a{text-decoration:none;color:var(--muted);font-size:14px}.nav a:hover,.nav a:focus{color:var(--gold)}
+    .tag{display:inline-flex;border:1px solid #d6b15e80;border-radius:30px;padding:6px 13px;color:var(--gold);font-size:13px}.hero{padding:76px 0 62px;display:grid;grid-template-columns:1.2fr .8fr;gap:38px;align-items:center}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.35;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{font-size:18px;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;justify-content:center;align-items:center;padding:12px 21px;border-radius:12px;background:var(--gold);color:var(--navy);font-weight:800;text-decoration:none;border:1px solid var(--gold)}.btn.secondary{background:transparent;color:var(--cream);border-color:#ffffff55}.btn:hover{filter:brightness(1.08)}.visual{border:1px solid #d6b15e55;border-radius:26px;padding:25px;background:linear-gradient(150deg,#ffffff12,#ffffff04);box-shadow:0 25px 70px #0003}.visual-mark{height:190px;border-radius:18px;display:grid;place-items:center;background:radial-gradient(circle,#d6b15e24,transparent 62%),#07172d;font-size:74px;color:var(--gold)}.visual p{font-size:14px;text-align:center;margin-bottom:0}
+    section{padding:42px 0}.section-head{margin-bottom:22px}.section-head h2{font-size:29px;margin:0 0 7px}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:21px}.card .symbol{font-size:26px;color:var(--gold)}.card h3{color:var(--gold);margin:7px 0}.card p{margin:0;color:var(--muted);font-size:14px}.wide{border:1px solid #d6b15e55;border-radius:22px;padding:28px;background:linear-gradient(120deg,#d6b15e12,#ffffff06);display:flex;justify-content:space-between;align-items:center;gap:20px}.wide h2{margin:0 0 5px}.wide p{margin:0;color:var(--muted)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{padding:20px;border-right:3px solid var(--gold);background:#ffffff08;border-radius:14px}.step b{color:var(--gold)}.notice{font-size:13px;color:#d7c89f;border:1px dashed #d6b15e70;border-radius:14px;padding:14px;margin-top:20px}.faq details{background:#ffffff08;border:1px solid var(--line);padding:15px 18px;border-radius:13px;margin:10px 0}.faq summary{cursor:pointer;color:var(--gold);font-weight:bold}.faq p{color:var(--muted);margin-bottom:0}.foot{padding:28px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{color:var(--gold)}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:48px 0}.visual{max-width:430px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:1fr}.nav{gap:12px}.nav a{font-size:12px}.wide{align-items:flex-start;flex-direction:column}}
+    @media(max-width:480px){.wrap{width:min(100% - 28px,1100px)}.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.hero h1{font-size:36px}.hero p{font-size:16px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
 <body>
-<header><h1>🛵 يلا بينا</h1><p>دليفري وتوصيل أفراد وطلبات وطرود — سوهاج</p><p class="small">المقر: بحري بنك فيصل الإسلامي، متفرع من ميدان الثقافة</p></header>
-<main>
-<div class="card"><div class="tabs"><button type="button" id="tabRide" class="active">🚗 مشوار</button><button type="button" id="tabDelivery">🍔 دليفري</button></div></div>
-<div class="card">
-<label>من أين؟ (نقطة الانطلاق)</label><input id="from" placeholder="مثال: ميدان الثقافة، سوهاج">
-<button type="button" id="geo" style="margin-top:8px;padding:10px;border-radius:10px;border:0;background:#0ea5e9;color:#fff;width:100%">📍 تحديد موقعي</button>
-<label>إلى أين؟ (وجهة الوصول)</label><input id="to" placeholder="مثال: جامعة سوهاج (القديمة)">
-<label>نوع الطلب</label><select id="kind"><option>مطعم / أكل</option><option>صيدلية / علاج</option><option>سوبر ماركت</option><option>طرد / أوراق</option><option>مشوار / توصيل أفراد</option></select>
-<label>تفاصيل الطلب</label><textarea id="details" rows="3" placeholder="اسم المحل، عنوان التوصيل، محتوى الطرد..."></textarea>
-<label>استلام من / تسليم إلى</label><input id="receiver" placeholder="اسم ورقم المستلم">
-<label>اسمك</label><input id="name" placeholder="اسمك">
-<label>رقم موبايلك</label><input id="phone" type="tel" placeholder="01xxxxxxxxx" dir="ltr">
-<label>وسيلة النقل</label><div class="vehicle"><label><input type="radio" name="v" value="موتوسيكل" checked><span>🛵 موتوسيكل - أسرع وأوفر</span></label><label><input type="radio" name="v" value="سيارة ملاكي"><span>🚗 ملاكي - مريحة ومكيفة</span></label></div>
-<button class="cta" id="send">✅ تأكيد وطلب الآن عبر واتساب</button>
-<p class="small">بالضغط على تأكيد سيتم تحويلك لواتساب لإرسال الطلب ومتابعة الكابتن. واتساب: 01038007886 | هاتف: 01275588383</p>
-</div>
-<div class="card small"><b>الحساب:</b> المسافة والوقت والتكلفة المتوقعة يتم تأكيدهم مع الكابتن على واتساب بعد إرسال الطلب.<br><a href="./privacy.html">سياسة الخصوصية</a></div>
-</main>
-<script>
-const p=new URLSearchParams(location.search);function setTab(t){document.getElementById('tabRide').classList.toggle('active',t!=='delivery');document.getElementById('tabDelivery').classList.toggle('active',t==='delivery');document.getElementById('kind').value=t==='delivery'?'مطعم / أكل':'مشوار / توصيل أفراد';}
-if(p.get('tab'))setTab(p.get('tab'));
-document.getElementById('tabRide').onclick=()=>setTab('ride');
-document.getElementById('tabDelivery').onclick=()=>setTab('delivery');
-document.getElementById('geo').onclick=()=>{if(!navigator.geolocation)return alert('المتصفح لا يدعم تحديد الموقع');navigator.geolocation.getCurrentPosition(pos=>{document.getElementById('from').value='موقعي الحالي: '+pos.coords.latitude.toFixed(5)+', '+pos.coords.longitude.toFixed(5);},()=>alert('اسمح بتحديد الموقع من المتصفح'));};
-document.getElementById('send').onclick=()=>{const g=id=>document.getElementById(id).value.trim();const phone=g('phone');if(!g('from')||!g('to')||!g('name')||!phone)return alert('من فضلك كمّل: من أين، إلى أين، الاسم، ورقم الموبايل');if(!/^01[0-9]{9}$/.test(phone))return alert('رقم الموبايل لازم يبدأ بـ 01 ويكون 11 رقم');const v=document.querySelector('input[name=v]:checked').value;const msg='طلب جديد - يلا بينا%0Aمن: '+encodeURIComponent(g('from'))+'%0Aإلى: '+encodeURIComponent(g('to'))+'%0Aالنوع: '+encodeURIComponent(g('kind'))+'%0Aالتفاصيل: '+encodeURIComponent(g('details'))+'%0Aالمستلم: '+encodeURIComponent(g('receiver'))+'%0Aالاسم: '+encodeURIComponent(g('name'))+'%0Aالموبايل: '+phone+'%0Aالوسيلة: '+encodeURIComponent(v);window.open('https://wa.me/201038007886?text='+msg,'_blank');};
-if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js');}
-</script>
+  <header class="wrap top">
+    <a class="logo" href="index.html" aria-label="يلا بينا الصفحة الرئيسية">يلا بينا <small>| YALBENA</small></a>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="#services">الخدمات</a><a href="#coverage">التغطية</a><a href="#how">طريقة العمل</a><a href="travel.html">دليل السفر</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="tag">من سوهاج… لكل مكان</span>
+        <h1>مشوارك وطلباتك<br><span>في مكان واحد</span></h1>
+        <p>يلا بينا منصة خدمات ومشاوير وتوصيل بتجربة بسيطة وهوية مصرية راقية. نبدأ بمدينة سوهاج بالكامل، ونبني خدماتنا خطوة بخطوة.</p>
+        <div class="actions"><a class="btn" href="#services">اكتشف الخدمات</a><a class="btn secondary" href="travel.html">استكشف دليل السفر</a></div>
+      </div>
+      <aside class="visual" aria-label="هوية يلا بينا">
+        <div class="visual-mark" aria-hidden="true">يلا</div>
+        <p>خدمة أقرب ليك — بخطوات واضحة وتجربة منظمة</p>
+      </aside>
+    </section>
+
+    <section id="services">
+      <div class="section-head"><h2>خدمات يلا بينا</h2><p>منصة واحدة لاحتياجاتك اليومية والتنقلات.</p></div>
+      <div class="grid">
+        <article class="card"><div class="symbol" aria-hidden="true">🚗</div><h3>المشاوير</h3><p>اطلب مشوارك وتابع تفاصيل الطلب والسعر المعتمد قبل التنفيذ.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">🍽️</div><h3>المطاعم والكافيهات</h3><p>اطلب من الأماكن المشاركة عند تفعيلها داخل نطاق الخدمة.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">🛒</div><h3>الماركت</h3><p>احتياجات البيت اليومية من المتاجر المشاركة.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">💊</div><h3>الصيدليات</h3><p>خدمة توصيل من الصيدليات المشاركة وفق الضوابط المعتمدة.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">📦</div><h3>الطرود</h3><p>استلام وتسليم الطرود مع تنظيم حالة الطلب.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">🧭</div><h3>السفر والرحلات</h3><p>دليل للمسارات ووسائل السفر: طيران وقطارات وأتوبيسات وسيارات.</p></article>
+      </div>
+    </section>
+
+    <section id="coverage">
+      <div class="wide"><div><h2>تغطية مدينة سوهاج بالكامل</h2><p>شرق وغرب سوهاج تقسيمات تشغيل داخلية، وليست حدود الخدمة.</p></div><span class="tag">نطاق البداية</span></div>
+    </section>
+
+    <section id="how">
+      <div class="section-head"><h2>تجربة واضحة من البداية</h2><p>الخطوات الأساسية التي نبني عليها تجربة العميل والكابتن.</p></div>
+      <div class="steps">
+        <div class="step"><b>01 — اختار الخدمة</b><p>حدد نوع المشوار أو الطلب وبياناته الأساسية.</p></div>
+        <div class="step"><b>02 — راجع التفاصيل</b><p>تظهر تفاصيل الطلب والتكلفة وفق التعريفة المعتمدة.</p></div>
+        <div class="step"><b>03 — تابع الطلب</b><p>تابع حالة الطلب وتحديثاته من خلال التطبيق عند الإطلاق.</p></div>
+      </div>
+      <div class="notice">هذه صفحة معاينة تعريفية أثناء التطوير. الخدمات والأسعار ووسائل الدفع والحجز المباشر لا تعتبر مفعلة من خلال هذه الصفحة. لا تعتمد مواعيد أو أسعار السفر إلا بعد مراجعة المصدر الرسمي.</div>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="section-head"><h2 id="faq-title">أسئلة سريعة</h2></div>
+      <details><summary>هل الخدمة متاحة في كل سوهاج؟</summary><p>نطاق التغطية المخطط له هو مدينة سوهاج بالكامل، مع تقسيمات تشغيل داخلية لتسهيل الإدارة والتسعير. التفعيل الفعلي يتم تدريجيًا بعد تجهيز التشغيل.</p></details>
+      <details><summary>هل يمكن الحجز أو الدفع من صفحة المعاينة؟</summary><p>لا. الصفحة الحالية للتعريف واستعراض شكل المنصة، وليست بوابة حجز أو دفع مباشرة.</p></details>
+      <details><summary>هل مواعيد السفر المعروضة مؤكدة؟</summary><p>دليل السفر يوضح المسارات والمصادر، ولا يؤكد وجود رحلة أو مقعد أو سعر إلا بعد توثيق حديث من المصدر الرسمي.</p></details>
+    </section>
+  </main>
+  <footer class="wrap foot"><div><strong>يلا بينا | YALBENA</strong><br>من سوهاج… لكل مكان</div><div>نسخة معاينة تطويرية — ليست منصة تشغيل أو حجز مكتملة.</div></footer>
 </body>
 </html>
