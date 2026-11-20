@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: yalbena-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: yalbena-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_PHONE
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CLIENT_ORIGIN
+        value: https://klabsh59-hue.github.io
+databases:
+  - name: yalbena-db
+    plan: free
+    databaseName: yalbena
+    user: yalbena_admin
