@@ -7,6 +7,6 @@
 - قاعدة البيانات والترحيلات: `database/`
 - تطبيقات العميل والكابتن: `apps/`
 
-ابدأ بقراءة `README_AR.md` و`STATUS_0.9.7_MANUAL_RELEASE_AR.md` و`UPLOAD_0.9.7_MANUAL_AR.md` و`GO_LIVE_CHECKLIST_AR.md`.
+ابدأ بقراءة `README_AR.md` و`STATUS_0.9.6_DEPLOY_PREP_AR.md` و`GO_LIVE_CHECKLIST_AR.md`.
 
 **تنبيه:** لا تنشر لوحة الإدارة للعامة قبل تفعيل المصادقة والصلاحيات. لم يتم بعد نشر API أو قاعدة البيانات أو اختبار تكامل حي. لا تضع أسرارًا أو ملفات `.env` في GitHub.
