@@ -1,15 +1,11 @@
-# Render Blueprint for YALBENA
-# Create the services from this file in the user's Render account.
 services:
   - type: web
     name: yalbena-api
     runtime: node
-    plan: starter
-    rootDir: backend
-    buildCommand: npm install && npm run build
-    preDeployCommand: npm run migrate:database
-    startCommand: node dist/main.js
-    healthCheckPath: /v1/health/live
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
@@ -17,22 +13,14 @@ services:
         fromDatabase:
           name: yalbena-db
           property: connectionString
-      - key: JWT_ACCESS_SECRET
+      - key: JWT_SECRET
         generateValue: true
-      - key: JWT_ACCESS_TTL
-        value: 15m
-      - key: CORS_ORIGINS
+      - key: CLIENT_ORIGIN
+        value: https://klabsh59-hue.github.io
+      - key: ADMIN_PHONE
         sync: false
-      - key: ROUTING_PROVIDER_URL
+      - key: ADMIN_PASSWORD
         sync: false
-      - key: TRAVEL_VERIFICATION_TTL_HOURS
-        value: 24
-  - type: web
-    name: yalbena-preview
-    runtime: static
-    rootDir: web-preview
-    buildCommand: echo "Static YALBENA preview"
-    staticPublishPath: .
 
 databases:
   - name: yalbena-db
