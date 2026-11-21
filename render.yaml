@@ -26,4 +26,4 @@ databases:
   - name: yalbena-db
     databaseName: yalbena
     user: yalbena
-    plan: basic-256mb
+    plan: free
